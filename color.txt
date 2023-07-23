@@ -1,0 +1,5 @@
+sötét kék : #34495e
+Lila : #9b59b6
+kék : #3498db
+világos zöld : #2ecc71
+zöld : #1abc9c

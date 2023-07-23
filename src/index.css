@@ -1,13 +1,258 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /******* BASE ********/
+
+  h1 {
+    @apply text-[2rem] sm:text-[2.8rem];
+  }
+
+  h2 {
+    @apply text-[1.6rem] sm:text-[2rem];
+  }
+  h3 {
+    @apply text-[1.2rem] sm:text-[1.4rem];
+  }
+  h4 {
+    @apply text-[1.1rem] sm:text-[1.2rem];
+  }
+
+  select {
+    @apply cursor-pointer;
+  }
+
+  label.required::after {
+    @apply content-["_*"] text-red-500;
+  }
+
+  .nav__span {
+    @apply absolute top-6 left-0 w-[0px] h-[2px] group-hover:w-full bg-gradient-to-r from-lightGreen to-lightBlue ease-in-out duration-200;
+  }
+
+  .btn__1 {
+    @apply text-lightGreen hover:text-lightBlue py-2 px-5 ease-in duration-100 border-2 border-lightBlue hover:border-lightGreen rounded-sm;
+  }
+
+  .btn__2 {
+    @apply text-body bg-lightGreen py-2 px-5 rounded-sm border-2 border-lightGreen hover:bg-lightBlue ease-in duration-100;
+  }
+
+  /****** Book a Car *********/
+  .form__box {
+    @apply max-w-[300px] pt-5 sm:pr-5;
+  }
+
+  .form__box select,
+  .form__box input {
+    @apply mt-2 p-2 bg-transparent border-2 border-lightGreen w-full  outline-none;
+  }
+
+  .form__box option {
+    @apply bg-body;
+  }
+
+  /********* FAQ **********/
+
+  .question {
+    @apply px-10 cursor-pointer;
+  }
+  .question i {
+    @apply ease-in-out duration-300;
+  }
+  .active__question {
+    @apply bg-lightGreen text-body;
+  }
+  .active__question i {
+    @apply rotate-180 ease-in-out duration-300;
+  }
+  .answer {
+    @apply max-h-0 overflow-hidden font-sans text-purple px-10 border-t-2 border-transparent ease-in-out duration-500;
+  }
+  .active__answer {
+    @apply max-h-[20rem] py-3 bg-black bg-opacity-30;
+  }
+
+  /*********** Fleet *****************/
+
+  .reservation input {
+    @apply bg-transparent  border-2 p-2;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer utilities {
+  body {
+    background: #162331;
+    color: #ffe4c4;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    overflow-x: hidden;
+  }
+  /************** Shadow ****************/
+  .form__shadow,
+  .faq__shadow,
+  .fleet__shadow {
+    box-shadow: 5px 5px 15px rgba(0, 215, 243, 0.2);
+  }
+  /**************** NAV *******************/
+  .nav__color {
+    background: -webkit-linear-gradient(left, lightGreen, lightBlue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .nav__link__hover:hover {
+    background: -webkit-linear-gradient(right, lightGreen, lightBlue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /************** Contact ****************/
+  .contact__shadow {
+    box-shadow: -2px -2px 5px lightGreen;
+  }
+
+  ::-webkit-calendar-picker-indicator {
+    background-color: #08b281;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 2px;
+    padding: 4px;
+  }
+  ::-webkit-calendar-picker-indicator:hover {
+    background-color: #00ccbf;
+  }
+
+  .book__img {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(./images/home/bookCar/book.png);
+    object-fit: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .react-datepicker-wrapper {
+    display: block !important;
+  }
+
+  .react-datepicker__header,
+  .react-datepicker__header div {
+    background-color: #162331 !important;
+    color: #ffe4c4 !important;
+  }
+
+  .react-datepicker__month-container,
+  .react-datepicker__day {
+    background-color: #162331;
+  }
+
+  .react-datepicker__day {
+    color: #ffe4c4 !important;
+  }
+
+  .react-datepicker__day:hover {
+    background-color: #9b59b6 !important;
+  }
+
+  element.style {
+  }
+  .react-datepicker__day--selected,
+  .react-datepicker__day--in-selecting-range,
+  .react-datepicker__day--in-range,
+  .react-datepicker__month-text--selected,
+  .react-datepicker__month-text--in-selecting-range,
+  .react-datepicker__month-text--in-range,
+  .react-datepicker__quarter-text--selected,
+  .react-datepicker__quarter-text--in-selecting-range,
+  .react-datepicker__quarter-text--in-range,
+  .react-datepicker__year-text--selected,
+  .react-datepicker__year-text--in-selecting-range,
+  .react-datepicker__year-text--in-range {
+    border-radius: 0.3rem;
+    background-color: #216ba5;
+    color: transparent;
+  }
+
+  /**** https://codepen.io/alvarotrigo/pen/Yzezamd *******/
+
+  /* checkbox-rect */
+  .checkbox-rect input,
+  .checkbox-rect label {
+    cursor: pointer;
+    margin: 4px 0;
+  }
+
+  .checkbox-rect input[type="checkbox"] {
+    display: none;
+  }
+  .checkbox-rect input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  .checkbox-rect input[type="checkbox"]:hover + label:hover {
+    color: #00ccbf;
+  }
+  .checkbox-rect input[type="checkbox"]:hover + label:before {
+    background: #00ccbf;
+    box-shadow: inset 0px 0px 0px 2px #f7f2f2;
+  }
+  .checkbox-rect input[type="checkbox"] + label:last-child {
+    margin-bottom: 0;
+  }
+  .checkbox-rect input[type="checkbox"] + label:before {
+    content: "";
+    display: block;
+    width: 1.3em;
+    height: 1.3em;
+    border: 1px solid #343a3f;
+    border-radius: 0.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: all 0.2s, background 0.2s ease-in-out;
+    transition: all 0.2s, background 0.2s ease-in-out;
+    background: #f3f3f3;
+  }
+  .checkbox-rect input[type="checkbox"]:checked + label:before {
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 0.3em;
+    border: 3px solid #fff;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background: #00ccbf;
+    box-shadow: 0 0 0 1px #000;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: #162331;
+    box-shadow: inset 0 0 2px rgb(255, 255, 255);
+    border-radius: 1px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #08b281;
+
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9b59b6;
+  }
 }
