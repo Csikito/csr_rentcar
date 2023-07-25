@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/csr_rentcar/static/css/main.6d75f060.css",
-    "main.js": "/csr_rentcar/static/js/main.1d32335f.js",
+    "main.js": "/csr_rentcar/static/js/main.9a62a27c.js",
     "static/media/book.png": "/csr_rentcar/static/media/book.60baaa25a6a2c826f2aa.png",
     "static/media/team_5.jpg": "/csr_rentcar/static/media/team_5.6b73fd246a999fb8e32e.jpg",
     "static/media/team_3.jpg": "/csr_rentcar/static/media/team_3.60fbecdd00415b5ecbfe.jpg",
@@ -37,10 +37,10 @@
     "static/media/revicons.woff": "/csr_rentcar/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/csr_rentcar/index.html",
     "main.6d75f060.css.map": "/csr_rentcar/static/css/main.6d75f060.css.map",
-    "main.1d32335f.js.map": "/csr_rentcar/static/js/main.1d32335f.js.map"
+    "main.9a62a27c.js.map": "/csr_rentcar/static/js/main.9a62a27c.js.map"
   },
   "entrypoints": [
     "static/css/main.6d75f060.css",
-    "static/js/main.1d32335f.js"
+    "static/js/main.9a62a27c.js"
   ]
 }
