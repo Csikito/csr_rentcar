@@ -28,7 +28,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route
-          path="/"
+          path="/csr_rentcar"
           element={
             <Home
               pickUp={pickUp}
@@ -45,9 +45,9 @@ function App() {
             />
           }
         />
-        <Route path="/about" element={<About />} />
+        <Route path="/csr_rentcar/about" element={<About />} />
         <Route
-          path="/fleet"
+          path="/csr_rentcar/fleet"
           element={
             <Fleet
               pickUp={pickUp}
@@ -64,7 +64,7 @@ function App() {
             />
           }
         />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/csr_rentcar/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </>

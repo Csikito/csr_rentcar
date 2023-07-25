@@ -41,7 +41,7 @@ const Navbar = () => {
           <ul className="flex flex-col py-36 sm:py-0 sm:flex-row sm:justify-end gap-4 sm:gap-5 text-center">
             <li className="relative group ">
               <Link
-                to="/"
+                to="/csr_rentcar"
                 className="nav__link__hover nav__color"
                 onClick={() => isOpenMenu()}
               >
@@ -51,7 +51,7 @@ const Navbar = () => {
             </li>
             <li className="relative group ">
               <Link
-                to="/about"
+                to="/csr_rentcar/about"
                 className="nav__link__hover nav__color "
                 onClick={() => isOpenMenu()}
               >
@@ -61,7 +61,7 @@ const Navbar = () => {
             </li>
             <li className="relative group ">
               <Link
-                to="/fleet"
+                to="/csr_rentcar/fleet"
                 className="nav__link__hover nav__color "
                 onClick={() => isOpenMenu()}
               >
@@ -71,7 +71,7 @@ const Navbar = () => {
             </li>
             <li className="relative group ">
               <Link
-                to="/contact"
+                to="/csr_rentcar/contact"
                 className="nav__link__hover nav__color "
                 onClick={() => isOpenMenu()}
               >
@@ -81,7 +81,7 @@ const Navbar = () => {
             </li>
             <li className="">
               <Link
-                to="/"
+                to="/csr_rentcar"
                 className="btn__1 whitespace-nowrap "
                 onClick={() => isOpenMenu()}
               >
@@ -89,7 +89,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="my-4 sm:my-0">
-              <Link to="/" className="btn__2" onClick={() => isOpenMenu()}>
+              <Link
+                to="/csr_rentcar/"
+                className="btn__2"
+                onClick={() => isOpenMenu()}
+              >
                 Register
               </Link>
             </li>
