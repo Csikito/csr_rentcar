@@ -18,7 +18,7 @@ function App() {
 
   const handleBook = (e) => {
     e.preventDefault();
-    navigate("/fleet");
+    navigate("/csr_rentcar/fleet");
   };
 
   useEffect(() => {}, [pickUp, dropOf, age]);
