@@ -1,16 +1,26 @@
 import React from "react";
 
-const FleetFilter = ({ filteredData, setFilteredTags }) => {
+const FleetFilter = ({
+  filteredData,
+  setFilteredTags,
+  clickFilter,
+  setClickFilter,
+}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let inputCheckBox = Object.values(e.target);
     let data = inputCheckBox.filter((item) => item.checked === true);
     setFilteredTags(data);
+    setClickFilter(!clickFilter);
   };
 
   return (
     <>
-      <div className=" sticky top-8 flex flex-col gap-3 border-2 border-lightGreen p-5 rounded-sm">
+      <div
+        className={`${
+          clickFilter ? "left-5" : "-left-96"
+        } absolute lg:sticky top-0 sm:top-8 h-[500px] md:h-auto flex flex-col gap-3 border-2 bg-body z-30 border-lightGreen p-5 rounded-sm duration-500 overflow-y-scroll md:overflow-y-auto`}
+      >
         <form
           className="flex flex-col gap-3 checkbox-rect"
           onSubmit={(e) => handleSubmit(e)}

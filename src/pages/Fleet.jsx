@@ -2,13 +2,28 @@ import React from "react";
 import no_vehicle from "../images/fleet/no_vehicle.png";
 import SectionTitle from "../components/layout/SectionTitle";
 import FleetFilter from "../components/FleetFilter";
+import BookCar from "../components/BookCar";
 import { VEHICLE_DATA } from "../components/VehicleData";
 import FleetCard from "../components/FleetCard";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-const Fleet = ({ pickUp, dropOf, age, pickUpDay, dropOfDay }) => {
+const Fleet = ({
+  pickUp,
+  dropOf,
+  age,
+  pickUpDay,
+  dropOfDay,
+  setPickUp,
+  setDropOf,
+  setAge,
+  setPickUpDay,
+  setDropOfDay,
+  handleBook,
+}) => {
   const [filteredTags, setFilteredTags] = useState([]);
   const [filteredData, setFilteredData] = useState(VEHICLE_DATA);
+  const [clickFilter, setClickFilter] = useState(false);
 
   useEffect(() => {
     if (filteredTags.length > 0) {
@@ -119,42 +134,86 @@ const Fleet = ({ pickUp, dropOf, age, pickUpDay, dropOfDay }) => {
   }, [filteredTags]);
 
   return (
-    <main className="py-36">
+    <main className="py-24 sm:py-36">
       <div className="lg:container m-auto px-5 ">
         <SectionTitle title="Fleet" subtitle="Car Park" />
-        <section className="flex flex-col lg:flex-row relative ">
-          <div className="filter  sm:min-w-[310px] lg:pr-10 lg:py-8 ">
-            <FleetFilter
-              filteredData={filteredData}
-              setFilteredTags={setFilteredTags}
-            />
-          </div>
-          <div className="fleet w-full">
-            {filteredData.length > 0 ? (
-              filteredData.map((data) => (
-                <FleetCard
-                  data={data}
-                  key={data.id}
-                  pickUp={pickUp}
-                  dropOf={dropOf}
-                  age={age}
-                  pickUpDay={pickUpDay}
-                  dropOfDay={dropOfDay}
-                />
-              ))
-            ) : (
-              <div className=" text-center relative">
-                <div className="absolute top-10 left-1/2 -translate-x-1/2 opacity-5">
-                  <img src={no_vehicle} alt="no_vehicle" />
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          viewport={{ once: true }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, delay: 0.5 },
+          }}
+        >
+          <BookCar
+            pickUp={pickUp}
+            setPickUp={setPickUp}
+            dropOf={dropOf}
+            setDropOf={setDropOf}
+            age={age}
+            setAge={setAge}
+            pickUpDay={pickUpDay}
+            setPickUpDay={setPickUpDay}
+            dropOfDay={dropOfDay}
+            setDropOfDay={setDropOfDay}
+            handleBook={handleBook}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          viewport={{ once: true }}
+          whileInView={{
+            opacity: 1,
+
+            transition: { duration: 0.5, delay: 0.2 },
+          }}
+        >
+          <section className="flex flex-col lg:flex-row relative ">
+            <div className="sticky top-0  z-30">
+              <button
+                className=" absolute top-0  -left-10 hover:-left-8 lg:hidden  sm:my-8 text-body  bg-lightGreen hover:bg-purple  cursor-pointer duration-300 ease-in-out text-2xl pl-8 pr-2 py-2 rounded-lg  "
+                onClick={() => setClickFilter(!clickFilter)}
+              >
+                <i className="ri-filter-line"></i>
+              </button>
+            </div>
+
+            <div className=" sticky top-0 left-5 z-30 lg:left-0 lg:relative sm:min-w-[310px] lg:pr-10 lg:py-8 duration-500 ">
+              <FleetFilter
+                filteredData={filteredData}
+                setFilteredTags={setFilteredTags}
+                clickFilter={clickFilter}
+                setClickFilter={setClickFilter}
+              />
+            </div>
+            <div className="fleet w-full">
+              {filteredData.length > 0 ? (
+                filteredData.map((data) => (
+                  <FleetCard
+                    data={data}
+                    key={data.id}
+                    pickUp={pickUp}
+                    dropOf={dropOf}
+                    age={age}
+                    pickUpDay={pickUpDay}
+                    dropOfDay={dropOfDay}
+                  />
+                ))
+              ) : (
+                <div className=" text-center relative">
+                  <div className="absolute top-10 left-1/2 -translate-x-1/2 opacity-5">
+                    <img src={no_vehicle} alt="no_vehicle" />
+                  </div>
+                  <p className="animate-pulse text-purple text-2xl py-48 ">
+                    <span className="text-4xl text-lightGreen">Sorry</span>{" "}
+                    <br /> There is no such vehicle in our fleet
+                  </p>
                 </div>
-                <p className="animate-pulse text-purple text-2xl py-48 ">
-                  <span className="text-4xl text-lightGreen">Sorry</span> <br />{" "}
-                  There is no such vehicle in our fleet
-                </p>
-              </div>
-            )}
-          </div>
-        </section>
+              )}
+            </div>
+          </section>
+        </motion.div>
       </div>
     </main>
   );

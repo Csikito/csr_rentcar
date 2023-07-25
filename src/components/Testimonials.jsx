@@ -47,13 +47,13 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-48 bg-lightBlue bg-opacity-10">
+    <section className="py-28 sm:py-48 bg-lightBlue bg-opacity-10">
       <div className="container m-auto px-5">
         <SectionTitle
           title="Client's Testimonials"
           subtitle="Reviewd by People"
         />
-        <div>
+        <div className="w-full min-h-[400px] ">
           <Carousel
             responsive={responsive}
             arrows={
@@ -65,7 +65,7 @@ const Testimonials = () => {
             autoPlay={true}
             autoPlaySpeed={9000}
           >
-            <div className="max-w-[400px] min-h-[400px] m-auto flex flex-col justify-between  p-6 rounded-sm  bg-lightGreen text-body">
+            <div className="max-w-[400px] h-full flex flex-col justify-between mx-4 min-[480px]:m-auto  p-6 rounded-sm  bg-lightGreen text-body">
               <p>
                 " This was my first time renting from this company and I was
                 blown away by the incredible service. I got a wonderful tesla
@@ -89,7 +89,7 @@ const Testimonials = () => {
                 <i className="ri-double-quotes-r absolute bottom-20 min-[400px]:bottom-0 right-0 text-[3rem] text-purple"></i>
               </div>
             </div>
-            <div className="max-w-[400px] min-h-[400px] m-auto flex flex-col justify-between  p-6 rounded-sm  bg-lightGreen text-body">
+            <div className="max-w-[400px] h-full flex flex-col justify-between mx-4 min-[480px]:m-auto p-6 rounded-sm  bg-lightGreen text-body">
               <p>
                 " We rented a car from this website and had an amazing
                 experience! The booking was easy and the rental rates were very
@@ -110,7 +110,7 @@ const Testimonials = () => {
                 <i className="ri-double-quotes-r absolute bottom-20 min-[400px]:bottom-0 right-0 text-[3rem] text-purple"></i>
               </div>
             </div>
-            <div className="max-w-[400px] min-h-[400px] m-auto flex flex-col justify-between  p-6 rounded-sm  bg-lightGreen text-body">
+            <div className="max-w-[400px] h-full flex flex-col justify-between mx-4 min-[480px]:m-auto  p-6 rounded-sm  bg-lightGreen text-body">
               <p>
                 " We've had a great experience by sixt, when LAURA made sure we
                 walk out with the best deal, and took care of our needs
@@ -131,7 +131,7 @@ const Testimonials = () => {
                 <i className="ri-double-quotes-r absolute bottom-20 min-[400px]:bottom-0 right-0 text-[3rem] text-purple"></i>
               </div>
             </div>
-            <div className="max-w-[400px] min-h-[400px] m-auto flex flex-col justify-between  p-6 rounded-sm  bg-lightGreen text-body">
+            <div className="max-w-[400px] h-full flex flex-col justify-between mx-4 min-[480px]:m-auto  p-6 rounded-sm  bg-lightGreen text-body">
               <p>
                 " Recently, I rented a car and had an amazing experience. The
                 car was in great condition and the customer service provided by

@@ -2,9 +2,9 @@ import React from "react";
 
 const InfoSection = () => {
   return (
-    <section className="mb-36 bg-lightGreen text-body">
-      <div className="container m-auto text-center py-28">
-        <h1>
+    <section className="mb-28 sm:mb-36 bg-lightGreen text-body">
+      <div className="container m-auto text-center py-24">
+        <h1 className="pb-8">
           Save <span className="text-purple font-bold">big</span> with our cheap
           car rental!
         </h1>

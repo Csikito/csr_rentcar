@@ -11,17 +11,27 @@ import car_type from "../images/about/car_type.png";
 import cars from "../images/about/cars.png";
 import users from "../images/about/users.png";
 import CountUp from "react-countup";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
     <main>
-      <section className="py-36">
+      <section className="py-24 sm:py-36">
         <div className="container m-auto px-5">
           <SectionTitle
             title="About Company"
             subtitle="Excellent professionals"
           />
-          <div className="flex flex-col justify-center items-center md:flex-row gap-10  lg:gap-28 ">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            viewport={{ once: true }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              transition: { duration: 0.5, delay: 0.6 },
+            }}
+            className="flex flex-col justify-center items-center md:flex-row gap-10  lg:gap-28 "
+          >
             <div className="w-full md:w-1/2 scroll__scale">
               <img src={company} alt="about company" />
             </div>
@@ -59,13 +69,23 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
-      <section className="pt-28 pb-36 bg-lightBlue bg-opacity-10">
+      <section className="py-20 sm:pt-28 sm:pb-36 bg-lightBlue bg-opacity-10">
         <div className="container m-auto px-3">
           <SectionTitle title="Our Team" subtitle="Excellent professionals" />
-          <div className="flex flex-wrap justify-center gap-12 lg:gap-32 scroll__scale">
+
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            viewport={{ once: true }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.5, delay: 0.3 },
+            }}
+            className="flex flex-wrap justify-center gap-12 lg:gap-32 scroll__scale"
+          >
             <div className="w-[300px] text-center text-body  bg-lightGreen pb-3 shadow-sm shadow-purple">
               <div>
                 <img src={team_1} alt="team__img" />
@@ -108,7 +128,7 @@ const About = () => {
               <h2 className="mt-5">Ken Wright</h2>
               <p className=" opacity-60">Manager</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </main>

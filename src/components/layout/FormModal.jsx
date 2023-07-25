@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const FormModal = ({
   data,
@@ -37,15 +36,16 @@ const FormModal = ({
             <div className="text-xl text-purple p-5 text-center">
               <p>Please set the data in the "book a car" section first!</p>
             </div>
-            <div className="flex justify-center items-center">
-              <Link to="/" className="btn__2 m-5">
-                Book a car
-              </Link>
 
-              <button className=" btn__1 m-5" onClick={onClose}>
-                Continue view vehicle
-              </button>
-            </div>
+            <button
+              className=" btn__1 m-5"
+              onClick={() => {
+                window.scrollTo(0, 0);
+                onClose();
+              }}
+            >
+              Go back
+            </button>
           </div>
         </div>
       ) : (

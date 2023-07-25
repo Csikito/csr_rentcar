@@ -14,7 +14,7 @@ const BookCar = ({
   handleBook,
 }) => {
   return (
-    <section className="mb-48">
+    <section className="mb-28 sm:mb-48">
       <div className="max-w-[1240px] m-auto px-5 ">
         <div className="w-full  book__img  form__shadow rounded-md pt-5 pb-10 px-10 text-text scroll__scale">
           <h3 className="text-[24px] font-bold text-center md:text-left">

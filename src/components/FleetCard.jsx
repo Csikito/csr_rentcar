@@ -35,7 +35,9 @@ const FleetCard = ({ data, pickUp, dropOf, age, pickUpDay, dropOfDay }) => {
         }`}
       >
         <div className=" bg-body bg-opacity-90 text-purple text-xl w-full text-center py-5">
-          <p className="animate-pulse">Check your email to confirm an order.</p>
+          <p className="animate-pulse ">
+            Check your email to confirm an order.
+          </p>
         </div>
       </div>
       <div>

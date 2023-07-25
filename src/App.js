@@ -6,7 +6,6 @@ import About from "./pages/About";
 import Fleet from "./pages/Fleet";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
-import ScrollReveal from "scrollreveal";
 
 function App() {
   const [pickUp, setPickUp] = useState("");
@@ -19,23 +18,10 @@ function App() {
 
   const handleBook = (e) => {
     e.preventDefault();
-    console.log([pickUp, dropOf, age, pickUpDay, dropOfDay]);
     navigate("/fleet");
   };
 
-  useEffect(() => {
-    const sr = ScrollReveal({
-      origin: "top",
-      distance: "60px",
-      duration: 2400,
-      delay: 400,
-    });
-    sr.reveal(".scroll__top");
-    sr.reveal(".scroll__right", { origin: "right" });
-    sr.reveal(".scroll__left", { origin: "left" });
-    sr.reveal(".scroll__bottom", { origin: "bottom" });
-    sr.reveal(".scroll__scale", { scale: "0.8" });
-  });
+  useEffect(() => {}, [pickUp, dropOf, age]);
 
   return (
     <>
@@ -65,10 +51,16 @@ function App() {
           element={
             <Fleet
               pickUp={pickUp}
+              setPickUp={setPickUp}
               dropOf={dropOf}
+              setDropOf={setDropOf}
               age={age}
+              setAge={setAge}
               pickUpDay={pickUpDay}
+              setPickUpDay={setPickUpDay}
               dropOfDay={dropOfDay}
+              setDropOfDay={setDropOfDay}
+              handleBook={handleBook}
             />
           }
         />
